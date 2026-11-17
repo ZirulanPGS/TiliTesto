@@ -1,0 +1,16 @@
+:root {
+    --main-color: rgba(243, 198, 125, 1);
+    --bg-main: rgba(250, 246, 240, 1);
+    --white-color: #FFF;
+    --black-color: #000;
+    --text-color: rgba(107, 79, 58, 1);
+    --bg-secondary: rgba(244, 235, 225, 1);
+
+    --mg-page: 100px;
+    --nav-pg: 40px;
+    --big-gap: 40px;
+    --avg-gap: 20px;
+    --mini-gap: 10px;
+    --border: 12px;
+
+}

@@ -1,0 +1,193 @@
+@import url('variables.css');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+a{
+    text-decoration: none;
+    .now{
+    }
+}
+h2{
+    font-size: 40px;
+    color: var(--text-color);
+
+}
+h3{
+    font-size: 36px;
+}
+h4{
+    font-size: 32px;
+}
+h5{
+    font-size: 24px;
+}
+body{
+    background-color: var(--bg-main);
+    width: 100%;
+    height: 100%;
+    
+}
+main{
+    margin-left: var(--mg-page);
+    margin-right: var(--mg-page);
+
+}
+header{
+    margin-left: var(--mg-page);
+    margin-right: var(--mg-page);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: var(--big-gap);
+    .nav{
+        display: flex;
+        flex-direction: row;
+        gap: var(--big-gap);
+        padding: var(--avg-gap);
+        align-items: center;
+        img{cursor: pointer;}
+        a{
+            font-size: 40px;
+            color: var(--text-color);
+        }
+        
+    }
+    .iconCon{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--mini-gap);
+    }
+}
+footer{
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--bg-secondary);
+}
+
+.slider{
+    position: relative;
+    background: url(assets/sl1.webp);
+    width: 1720px;
+    height: 492px;
+    border-radius: var(--border);
+    margin-bottom: var(--big-gap);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.slider::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--text-color);
+    opacity: 0.4;
+    z-index: 1;
+    border-radius: var(--border);
+}
+.slider >*{
+    position: relative;
+    z-index: 2;
+}
+
+.con{
+    display: flex;
+    flex-direction: row;
+    gap: var(--avg-gap);
+    img{border-radius: var(--border);}
+    margin-bottom: var(--big-gap);
+    .halfPageCon{
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 1720px;
+        height: 492px;
+        border-radius: var(--border);
+        margin-bottom: var(--big-gap);
+        color: var(--white-color);
+        padding: var(--big-gap);
+        gap: var(--avg-gap);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .mainBTN{
+            width: 250px;
+        }
+    }
+    .halfPageCon:nth-child(1){
+        background: url(assets/pie.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+    }
+    .halfPageCon:nth-child(2){
+        background: url(assets/9390.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        align-items: flex-end;
+
+    }
+    .halfPageCon::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--text-color);
+        opacity: 0.4;
+        z-index: 1;
+        border-radius: var(--border);
+    }
+    .halfPageCon >*{
+    position: relative;
+    z-index: 2;
+}
+
+}
+.mainBTN{
+    padding: var(--mini-gap);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--text-color);
+    background-color: var(--main-color);
+    border-radius: var(--border);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: var(--mini-gap);
+    width: 559px;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    padding-bottom: var(--mini-gap);
+    border-radius: var(--border);
+    img{
+        border-radius: var(--border);
+        object-fit: cover;
+        object-position: center;
+    }
+    .textCon{
+        gap: var(--mini-gap);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
