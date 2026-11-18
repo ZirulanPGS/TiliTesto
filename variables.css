@@ -12,5 +12,21 @@
     --avg-gap: 20px;
     --mini-gap: 10px;
     --border: 12px;
+    --sliderElemGap: 30px;
 
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(assets/fonts/Nunito-Light.woff2);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(assets/fonts/Nunito-Regular.woff2);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(assets/fonts/Nunito-SemiBold.woff2);
+    font-weight: 700;
 }
