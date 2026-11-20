@@ -11,6 +11,9 @@ a{
     font-family: "Nunito";
 
 }
+.iconCon img, .card .textCon img{
+    cursor: pointer;
+}
 h2{
     font-size: 40px;
     color: var(--text-color);
@@ -234,6 +237,7 @@ footer{
         background-position: center;
         background-repeat: no-repeat;
         align-items: flex-end;
+        text-align: right;
 
     }
     .halfPageCon::before{
@@ -258,6 +262,7 @@ footer{
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: var(--text-color);
     align-items: center;
     padding: var(--avg-gap);
     gap: var(--avg-gap);
@@ -285,6 +290,7 @@ footer{
                 height: 68px;
                 border: 2px, solid;
                 background-color: var(--bg-main);
+                color: var(--text-color);
                 font-size: 30px;
                 text-align: center;
                 font-family: "Nunito";
@@ -333,11 +339,16 @@ footer{
     cursor: pointer;
     outline: none;
     font-size: 20px;
+    transition: filter 0.2s;
+    &:hover{
+        filter: brightness(0.92);
+    }
 }
 
 .card{
     display: flex;
     flex-direction: column;
+    color: var(--text-color);
     gap: var(--mini-gap);
     width: 100%;
     max-width: 559px;
@@ -369,7 +380,7 @@ footer{
     max-width: 1420px;
     height: 627px;
     border-radius: var(--border);
-    background: url(assets/Frame\ 24.png);
+    background: url(assets/dostavka.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -380,6 +391,33 @@ footer{
        font-size: 48px;
        font-weight: 800; 
        color: var(--bg-main);
+    }
+}
+.deliveryMap{
+    width: 100%;
+    max-width: 1420px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--avg-gap);
+    margin-top: var(--avg-gap);
+    color: var(--text-color);
+    font-family: "Nunito";
+    font-size: 1.25rem;
+    iframe{
+        width: 100%;
+        height: 450px;
+        border: 0;
+        border-radius: var(--border);
+    }
+    label{
+        display: flex;
+        align-items: center;
+        gap: var(--mini-gap);
+    }
+    .mainBTN{
+        width: 250px;
+        max-width: 100%;
     }
 }
 
@@ -527,5 +565,8 @@ footer{
     }
     .delCon h2 {
         font-size: 1.75rem;
+    }
+    .deliveryMap iframe {
+        height: 300px;
     }
 }

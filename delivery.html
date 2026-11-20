@@ -9,13 +9,12 @@
 </head>
 <body>
     <header>
-            <a class="logo" href="main.html"><img src="assets/ЛогоТилиТесто.svg" width="265" height="75"></a>
+            <a class="logo" href="index.html"><img src="assets/ЛогоТилиТесто.svg" width="265" height="75"></a>
             <div class="nav">
-                <a href="delivery.html" aria-current="page">Доставка</a>
+                <a href="index.html">Главная</a>
                 <a href="catalog.html">Каталог</a>
-                <a href="poz.html">Где нас найти</a>
+                <a href="delivery.html" aria-current="page">Доставка</a>
                 <a href="tasting.html">Дегустация</a>
-
             </div>
 
             <div class="iconCon">
@@ -32,7 +31,12 @@
             <div class="delCon">
                 <h2>Доставка на дом в 3 клика!</h2>
             </div>
-            <h2>Выберете место на карте</h2>
+            <h2>Выберите место на карте</h2>
+            <div class="deliveryMap">
+                <iframe src="https://maps.google.com/maps?ll=-34,150.5&amp;z=8&amp;output=embed" title="Карта для выбора места доставки" loading="lazy" allowfullscreen></iframe>
+                <label><input type="checkbox"> Оплата при получении</label>
+                <button class="mainBTN">Заказать</button>
+            </div>
             
         </main>
         
