@@ -47,11 +47,14 @@ main{
 
 }
 header{
-    margin-left: var(--mg-page);
-    margin-right: var(--mg-page);
+    width: calc(100% - 2 * var(--mg-page));
+    max-width: 1720px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    gap: var(--avg-gap);
     margin-bottom: var(--big-gap);
     .nav{
         display: flex;
@@ -59,11 +62,16 @@ header{
         gap: var(--big-gap);
         padding: var(--avg-gap);
         align-items: center;
-        img{cursor: pointer;}
         a{
             font-size: 40px;
             color: var(--text-color);
             font-weight: 700;
+            white-space: nowrap;
+        }
+        a[aria-current="page"]{
+            text-decoration: underline;
+            text-decoration-color: var(--text-color);
+            text-underline-offset: 8px;
         }
         
     }
@@ -72,6 +80,9 @@ header{
         flex-direction: row;
         align-items: center;
         gap: var(--mini-gap);
+    }
+    .nav + .iconCon{
+        margin-left: auto;
     }
 }
 footer{
@@ -93,7 +104,8 @@ footer{
 .slider{
     position: relative;
     background: url(assets/sl1.webp);
-    width: 1720px;
+    width: 100%;
+    max-width: 1720px;
     height: 492px;
     border-radius: var(--border);
     margin-bottom: var(--big-gap);
@@ -177,6 +189,8 @@ footer{
 .con{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    max-width: 1720px;
     gap: var(--avg-gap);
     img{border-radius: var(--border);}
     margin-bottom: var(--big-gap);
@@ -185,8 +199,9 @@ footer{
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        width: 850px;
-        height: 426px;
+        width: 100%;
+        max-width: 850px;
+        min-height: 426px;
         border-radius: var(--border);
         
         color: var(--white-color);
@@ -196,16 +211,13 @@ footer{
         flex-direction: column;
         justify-content: center;
         .textCon{
-            position: absolute;
-            top: 20%;
             gap: var(--avg-gap);
             display: flex;
             flex-direction: column;
         }
         .mainBTN{
-            position: absolute;
-            bottom: 35%;
             width: 250px;
+            max-width: 100%;
         }
     }
     
@@ -259,6 +271,7 @@ footer{
     .conInCon{
         display: flex;
         flex-direction: column;
+        max-width: 100%;
         gap: var(--mini-gap);
         .textCon{
             display: flex;
@@ -268,6 +281,7 @@ footer{
             input{
                 border-radius: var(--border);
                 width: 413px;
+                max-width: 100%;
                 height: 68px;
                 border: 2px, solid;
                 background-color: var(--bg-main);
@@ -285,6 +299,11 @@ footer{
         width: 100%;
         gap: var(--avg-gap);
         img{border-radius: var(--border);}
+        > img{
+            max-width: 50%;
+            height: auto;
+            object-fit: cover;
+        }
         margin-bottom: var(--big-gap);
         color: var(--text-color);
         position: relative;
@@ -320,7 +339,9 @@ footer{
     display: flex;
     flex-direction: column;
     gap: var(--mini-gap);
-    width: 559px;
+    width: 100%;
+    max-width: 559px;
+    min-width: 0;
     align-items: center;
     background-color: var(--bg-secondary);
     padding-bottom: var(--mini-gap);
@@ -329,6 +350,11 @@ footer{
         border-radius: var(--border);
         object-fit: cover;
         object-position: center;
+    }
+    > img{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 559 / 496;
     }
     .textCon{
         gap: var(--mini-gap);
@@ -339,7 +365,8 @@ footer{
     }
 }
 .delCon{
-    width: 1420px;
+    width: 100%;
+    max-width: 1420px;
     height: 627px;
     border-radius: var(--border);
     background: url(assets/Frame\ 24.png);
@@ -353,5 +380,152 @@ footer{
        font-size: 48px;
        font-weight: 800; 
        color: var(--bg-main);
+    }
+}
+
+@media (max-width: 1700px) {
+    :root {
+        --mg-page: 40px;
+        --big-gap: 20px;
+    }
+    header {
+        gap: 16px;
+    }
+    header .nav {
+        gap: 16px;
+        padding: 0;
+    }
+    header .nav a {
+        font-size: 1.5rem;
+    }
+    header .logo img {
+        width: 180px;
+        height: auto;
+    }
+    .conT .textConR {
+        position: static;
+        justify-content: center;
+        padding: 20px;
+    }
+}
+@media (max-width: 1000px) {
+    header .iconCon img {
+        width: 30px;
+        height: auto;
+    }
+    header .nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        padding: 10px 8px;
+        gap: 4px;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        background-color: var(--bg-secondary);
+    }
+    header .nav a {
+        flex: 1;
+        min-width: 0;
+        font-size: 0.75rem;
+        text-align: center;
+        white-space: normal;
+    }
+    header .logo img {
+        width: 120px;
+        height: auto;
+    }
+    body {
+        padding-bottom: 80px;
+    }
+}
+@media (max-width: 768px) {
+    :root {
+        --mg-page: 16px;
+    }
+    header .iconCon img {
+        width: 24px;
+        height: auto;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.25rem;
+    }
+    h5 {
+        font-size: 1.125rem;
+    }
+    .con {
+        flex-direction: column;
+        align-items: center;
+    }
+    .slider {
+        height: auto;
+        min-height: 492px;
+        padding: 30px 16px;
+        text-align: center;
+    }
+    .slider h2 {
+        font-size: 1.75rem;
+    }
+    .slider .textCon h5 {
+        font-size: 1.125rem;
+    }
+    .slider .mainBTN {
+        position: relative;
+        bottom: auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    .slider .sliderCon {
+        position: relative;
+        bottom: auto;
+        gap: 10px;
+        width: 100%;
+    }
+    .slider .sliderCon .arrow {
+        width: 25%;
+    }
+    .slider .sliderCon .arrow .active {
+        width: 64%;
+    }
+    .con .halfPageCon {
+        min-height: 300px;
+    }
+    .conT {
+        flex-direction: column;
+    }
+    .conT > img {
+        width: 100%;
+        max-width: 100%;
+    }
+    .conT .textConR {
+        text-align: left;
+        gap: 16px;
+    }
+    .conAsk .conInCon .textCon {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .conAsk .conInCon .textCon input {
+        width: 100%;
+        font-size: 1.125rem;
+    }
+    .conAsk .mainBTN {
+        width: 100%;
+        height: auto;
+        font-size: 1.25rem;
+    }
+    .delCon {
+        height: auto;
+        min-height: 300px;
+    }
+    .delCon h2 {
+        font-size: 1.75rem;
     }
 }
